@@ -62,10 +62,14 @@ public class JDBCmy {
 
         sql = "DELETE FROM " + table + " WHERE id=" + "'"+id+"'";
 
-        Statement statement = st;
-        ResultSet resultSet = statement.executeQuery(sql);
-        resultSet.deleteRow();
+        try{
+            Statement statement = st;
+            ResultSet resultSet = statement.executeQuery(sql);
+            resultSet.deleteRow();
+        }
+        catch (java.sql.SQLException e){
 
+        }
         st.close();
 
     }
