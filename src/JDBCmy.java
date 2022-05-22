@@ -3,7 +3,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class JDBCmy {
-    //        Запускается только через терминал "java -cp sqlite-jdbc-3.20.1.jar:. JDBCmy.java"
+    //        Запускается только через терминал "java -cp sqlite-jdbc-3.20.1.jar:. JDBCmy.java"!
 
     static final String JDBC_DRIVER = "org.sqlite.JDBC";
     static final String DATABASE_URL = "jdbc:sqlite:my.db";
@@ -57,7 +57,7 @@ public class JDBCmy {
 
         String sql;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Что удалить?");
+        System.out.println("Что удалить?(введите id)");
         id = sc.next();
 
         sql = "DELETE FROM " + table + " WHERE id=" + "'"+id+"'";
@@ -68,7 +68,6 @@ public class JDBCmy {
             resultSet.deleteRow();
         }
         catch (java.sql.SQLException e){
-
         }
         st.close();
 
